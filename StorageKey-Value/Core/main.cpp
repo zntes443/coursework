@@ -1,23 +1,25 @@
 #include <iostream>
-#include <memory>
+#include <string>
 #include "DataStore.h"
-#include "StringValue.h"
+#include "../Processing/CommandExecutor.h"
 
 int main() {
-    std::cout << "--- StorageKey-Value Server Starting ---" << std::endl;
+    std::cout << "--- StorageKey-Value ---" << std::endl;
 
     DataStore ds;
+    CommandExecutor executor(ds);
 
-    ds.set("mykey", std::make_unique<StringValue>("Hello!"));
+    std::cout << "> SET user1 admin" << std::endl;
+    std::cout << executor.execute("SET user1 admin") << std::endl;
 
-    IValue* val = ds.get("mykey");
+    std::cout << "> GET user1" << std::endl;
+    std::cout << executor.execute("GET user1") << std::endl;
 
-    if (val) {
-        std::cout << "Data in store: " << val->toString() << std::endl;
-    }
-    else {
-        std::cout << "Key not found." << std::endl;
-    }
+    std::cout << "> GET user2" << std::endl;
+    std::cout << executor.execute("GET user2") << std::endl;
+
+    std::cout << "> DELETE user1" << std::endl;
+    std::cout << executor.execute("DELETE user1") << std::endl;
 
     std::cout << "----------------------------------------" << std::endl;
 
