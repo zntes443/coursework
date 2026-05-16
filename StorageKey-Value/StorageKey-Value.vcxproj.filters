@@ -63,6 +63,9 @@
     <ClCompile Include="Core\StringValue.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="Processing\DeleteCommand.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BackgroundServices\SnapshotArchiver.h">
@@ -120,6 +123,9 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="PubSub\ISubscriber.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Processing\DeleteCommand.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

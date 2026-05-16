@@ -152,6 +152,7 @@
     <ClCompile Include="Processing\CommandExecutor.cpp" />
     <ClCompile Include="Processing\CommandFactory.cpp" />
     <ClCompile Include="Processing\CommandParser.cpp" />
+    <ClCompile Include="Processing\DeleteCommand.cpp" />
     <ClCompile Include="Processing\GetCommand.cpp" />
     <ClCompile Include="Processing\SetCommand.cpp" />
     <ClCompile Include="PubSub\NotificationManager.cpp" />
@@ -170,6 +171,7 @@
     <ClInclude Include="Processing\CommandExecutor.h" />
     <ClInclude Include="Processing\CommandFactory.h" />
     <ClInclude Include="Processing\CommandParser.h" />
+    <ClInclude Include="Processing\DeleteCommand.h" />
     <ClInclude Include="Processing\GetCommand.h" />
     <ClInclude Include="Processing\ICommand.h" />
     <ClInclude Include="Processing\SetCommand.h" />
