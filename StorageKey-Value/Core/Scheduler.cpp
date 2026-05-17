@@ -2,13 +2,21 @@
 #include <iostream>
 
 Scheduler::Scheduler()
-    : store(),
+    : notifier(),
+    archiver(),
+    synchronizer(),
+    store(),
     executor(store),
     session(executor),
-    listener(session) {}
+    listener(session) {
+
+    notifier.subscribe(&archiver);
+    notifier.subscribe(&synchronizer);
+    store.setNotifier(&notifier);
+}
 
 void Scheduler::run() {
-    std::cout << "--- StorageKey-Value Server Interactive Mode ---" << std::endl;
+    std::cout << "--- StorageKey-Value ---" << std::endl;
     std::cout << "Type EXIT or QUIT to stop." << std::endl;
     listener.listen();
     std::cout << "Server stopped." << std::endl;
