@@ -15,5 +15,6 @@ public:
     void set(const std::string& key, std::unique_ptr<IValue> value);
     IValue* get(const std::string& key);
     bool remove(const std::string& key);
+    void clear();
     size_t getSize() const;
 };

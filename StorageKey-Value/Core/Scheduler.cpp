@@ -6,12 +6,15 @@ Scheduler::Scheduler()
     archiver(),
     synchronizer(),
     store(),
+    memoryManager(3),
+    garbageCollector(store, memoryManager),
     executor(store),
     session(executor),
     listener(session) {
 
     notifier.subscribe(&archiver);
     notifier.subscribe(&synchronizer);
+    notifier.subscribe(&garbageCollector);
     store.setNotifier(&notifier);
 }
 

@@ -27,6 +27,13 @@ bool DataStore::remove(const std::string& key) {
     return erased;
 }
 
+void DataStore::clear() {
+    storage.clear();
+    if (notifier) {
+        notifier->notifyAll("CLEARED_ALL");
+    }
+}
+
 size_t DataStore::getSize() const {
     return storage.size();
 }

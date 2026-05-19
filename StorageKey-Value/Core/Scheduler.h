@@ -6,6 +6,8 @@
 #include "../PubSub/NotificationManager.h"
 #include "../BackgroundServices/SnapshotArchiver.h"
 #include "../BackgroundServices/Synchronizer.h"
+#include "../Memory/MemoryManager.h"
+#include "../Memory/GarbageCollector.h"
 
 class Scheduler {
 private:
@@ -13,6 +15,8 @@ private:
     SnapshotArchiver archiver;
     Synchronizer synchronizer;
     DataStore store;
+    MemoryManager memoryManager;
+    GarbageCollector garbageCollector;
     CommandExecutor executor;
     SessionHandler session;
     Listener listener;
